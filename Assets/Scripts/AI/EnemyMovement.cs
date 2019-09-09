@@ -12,12 +12,10 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake ()
     {
-
         // enemyHealth = GetComponent <EnemyHealth> ();
-        nav = GetComponent <NavMeshAgent> ();
-        player = GameObject.FindGameObjectWithTag ("Player").transform;
-        playerHealth = player.GetComponent <PlayerHealth> ();
-
+        // nav = GetComponent <NavMeshAgent> ();
+        // player = GameObject.FindGameObjectWithTag ("Player").transform;
+        // playerHealth = player.GetComponent <PlayerHealth> ();
     }
 
 
@@ -26,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
         // if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         // {
             //nav.Warp(player.position);
-            nav.SetDestination (player.position);
+            // nav.SetDestination (player.position);
             // Debug.Log("Enemy chases " + player.position);
         // }
         // else

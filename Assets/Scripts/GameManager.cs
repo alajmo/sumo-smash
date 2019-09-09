@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake() {
         players = GameObject.Find("Players");
-        // gameOverPanel.SetActive(false);
+        gameOverPanel.SetActive(false);
 
         if (instance == null) {
             instance = this;
