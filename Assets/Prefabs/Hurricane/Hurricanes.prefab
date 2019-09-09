@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2515814185437322486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2515814185437322474}
+  - component: {fileID: 2515814185437322485}
+  - component: {fileID: 2515814185437322484}
+  - component: {fileID: 2515814185437322487}
+  m_Layer: 0
+  m_Name: Hurricanes
+  m_TagString: Hurricane
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2515814185437322474
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515814185437322486}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2515814185437322485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515814185437322486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb98149f8120cf4bb10999d3bceedb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hurricanePrefab: {fileID: 1187805708125620096, guid: e7a61745a785dcc4c900876781b5b3f9,
+    type: 3}
+  yPosition: 2
+  initialWait: 0
+  timeBetweenHuricanes: 3
+  hurricaneDuration: 5
+  xPadding: 3
+  zPadding: 3
+--- !u!114 &2515814185437322484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515814185437322486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72dbc5c7738e51b45a32c4b1f9bc4d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originY: 0
+  height: 10
+--- !u!114 &2515814185437322487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515814185437322486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7727c41275e334497b002d8309bc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
