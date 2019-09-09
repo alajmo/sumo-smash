@@ -11,6 +11,8 @@ A party game for everyone.
 
 - We use separate scenes for debugging different features. For instance, debugging the food spawn can be done in the [food scene](Assets/Scenes/DebugScenes/FoodScene.unity).
 - To work on a feature or scene, you need to lock that scene so other people don't modify it since there are issues with people working on the same scene.
+- The [DemoScene](Assets/Scenes/DemoScene.unity) is special. It's our first level and should always work (so no experimentation on this scene please!).
+- Check the DemoScene to see how we structure the game objects in the hierarchy view.
 
 ## Kanban Workflow
 
