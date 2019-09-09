@@ -25,7 +25,7 @@ public class Food : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player")) {
-            playerHealth.gainHealth(10);
+            //playerHealth.gainHealth(10);
             OnRemove(this);
             Destroy(this.gameObject);
         }

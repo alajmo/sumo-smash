@@ -43,12 +43,9 @@ public class PlayerHealth : MonoBehaviour
       public void gainHealth (int amount)
     {
         currentHealth += amount;
-        healthSlider.value = currentHealth;
-        playerAudio.Play ();
+        // healthSlider.value = currentHealth;
+        // playerAudio.Play ();
     }
-
-
-
 
     void Death ()
     {
@@ -59,4 +56,3 @@ public class PlayerHealth : MonoBehaviour
         playerController.enabled = false;
     }
 }
-

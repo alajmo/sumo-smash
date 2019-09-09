@@ -155,6 +155,7 @@ public class PlayerController : MonoBehaviour
 
         if (jumpEnabled && jump && isGrounded())
         {
+        Debug.Log(11111);
             playerJump();
         }
 
@@ -203,7 +204,7 @@ public class PlayerController : MonoBehaviour
         if (walking) {
             playAnimator.SetInteger("condition", 1);
         } else {
-            playAnimator.SetInteger("condition", 0);
+            // playAnimator.SetInteger("condition", 0);
         }
         // playAnimator.SetBool ("IsWalking", walking);
     }

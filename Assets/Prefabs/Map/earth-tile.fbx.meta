@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 5c4c9eafbc49bd17db2e91c2825b9346
+guid: f498ca5df2917024685af034ecae44cf
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: matLowPoly
+    second: {fileID: 2100000, guid: 7c862d5c590912349ab6a1b029ef7380, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -43,11 +48,11 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
-    preserveHierarchy: 1
+    preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
@@ -67,7 +72,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3

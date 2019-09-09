@@ -105,15 +105,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.75
+    agentRadius: 0.5
     agentHeight: 1.2
-    agentSlope: 45
+    agentSlope: 36
     agentClimb: 0.34
-    ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
-    minRegionArea: 2
+    ledgeDropHeight: 1000
+    maxJumpAcrossDistance: 20
+    minRegionArea: 1
     manualCellSize: 0
-    cellSize: 0.25
+    cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -1255,7 +1255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733347582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.546809, y: 2.1814327, z: 1.4689455}
+  m_LocalPosition: {x: 12.546809, y: 2.1314328, z: -6.171054}
   m_LocalScale: {x: 3, y: 1.5, z: 3}
   m_Children: []
   m_Father: {fileID: 1794773814}
@@ -2267,15 +2267,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: be66986effd141b4992d2d78be127139, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: be66986effd141b4992d2d78be127139, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: be66986effd141b4992d2d78be127139, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8
+      value: 6.4
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: be66986effd141b4992d2d78be127139, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3435,17 +3435,17 @@ PrefabInstance:
     - target: {fileID: 4442001155305240530, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: 9.256654
       objectReference: {fileID: 0}
     - target: {fileID: 4442001155305240530, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 2.858601
       objectReference: {fileID: 0}
     - target: {fileID: 4442001155305240530, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -5.8817024
       objectReference: {fileID: 0}
     - target: {fileID: 4442001155305240530, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
         type: 3}
@@ -3486,6 +3486,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442001156129761074, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
+        type: 3}
+      propertyPath: playerLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442001156129761074, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
+        type: 3}
+      propertyPath: groundLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442001156129761074, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
+        type: 3}
+      propertyPath: _VerticalAxisName
+      value: Move Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442001156129761074, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
+        type: 3}
+      propertyPath: _HorizontalAxisName
+      value: Move Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442001156129761074, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
+        type: 3}
+      propertyPath: _JumpName
+      value: Jump
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442001156129761074, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
+        type: 3}
+      propertyPath: _DashName
+      value: Dash
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442001156129761074, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
+        type: 3}
+      propertyPath: _PushName
+      value: Push
+      objectReference: {fileID: 0}
+    - target: {fileID: 4442001156129761074, guid: 35e720f078c05f84a9e1fe1a6a0c1788,
+        type: 3}
+      propertyPath: _FireName
+      value: Fire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35e720f078c05f84a9e1fe1a6a0c1788, type: 3}

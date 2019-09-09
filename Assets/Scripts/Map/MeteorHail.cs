@@ -24,7 +24,7 @@ public class MeteorHail : MonoBehaviour
         mapPositionScript = gameObject.GetComponent<MapPosition>();
         randomPositionScript = gameObject.GetComponent<RandomPosition>();
 
-        mapArea = mapPositionScript.GetMapPosition();
+        // mapArea = mapPositionScript.GetMapPosition();
 
         TileBreak.OnBreak += listenOnTileBreak;
 

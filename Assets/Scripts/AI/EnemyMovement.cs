@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
         // {
             //nav.Warp(player.position);
             nav.SetDestination (player.position);
-            Debug.Log("Enemy chases " + player.position);
+            // Debug.Log("Enemy chases " + player.position);
         // }
         // else
         // {
