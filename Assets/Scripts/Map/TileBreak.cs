@@ -10,41 +10,62 @@ public class TileBreak : MonoBehaviour
     [Header("Timer")]
     public float removeInSeconds = 2f;
     public bool tileBreakEnabled = true;
+    public float torqueForce = 1f;
+    public float downwardForce = 2f;
 
-    private Transform[] tiles;
+    private float speed = 1f;
+    private float delta = 3f;  //delta is the difference between min y to max y.
+
+    public GameObject[] tiles;
 
     void Start() {
-        tiles = gameObject.GetComponents<Transform>();
-        if (tileBreakEnabled) {
-            StartCoroutine(RemoveTiles());
-        }
+        StartCoroutine(RemoveTiles());
     }
 
     IEnumerator RemoveTiles()
     {
         yield return new WaitForSeconds(removeInSeconds);
-        foreach (Transform item in gameObject.GetComponentInChildren<Transform>())
-        {
-            Destroy(item.gameObject);
-            // StartCoroutine(RemoveTile(item));
+        foreach (GameObject tile in tiles) {
+            StartCoroutine(RemoveTile(tile));
         }
 
         OnBreak(this);
     }
 
-    // IEnumerator RemoveTile(Transform item)
-    // {
-        // 1. Start animation (particle + rotation)
-        // yield return new WaitForSeconds(UnityEngine.Random.Range(1, 3));
-        // Anim();
+    IEnumerator RemoveTile(GameObject tile)
+    {
+        shakeTile(tile);
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1, 3));
 
-        // 2. Add gravity
-        // MeshCollider mc = item.gameObject.GetComponent<MeshCollider>();
-        // Rigidbody rg = item.gameObject.GetComponent<Rigidbody>();
-        // mc.convex = true;
-        // rg.useGravity = true;
+        EnableParticle(tile);
+        yield return new WaitForSeconds(2f);
 
-        // yield return new WaitForSeconds(2);
-    //     Destroy(item.gameObject);
-    // }
+        LoosenTile(tile);
+        yield return new WaitForSeconds(5);
+
+        Destroy(tile);
+    }
+
+    void shakeTile(GameObject tile) {
+        tile.GetComponent<Shake>().enabledShake();
+    }
+
+    void EnableParticle(GameObject tile) {
+        tile.GetComponent<ParticleSystem>().Play();
+    }
+
+    void LoosenTile(GameObject tile) {
+        tile.GetComponent<Shake>().disableShake();
+        MeshCollider mc = tile.GetComponent<MeshCollider>();
+        Rigidbody rb = tile.GetComponent<Rigidbody>();
+        mc.convex = true;
+        rb.isKinematic = false;
+        rb.useGravity = true;
+
+        float xRotation= UnityEngine.Random.Range(1, 3);
+        float yRotation= UnityEngine.Random.Range(1, 3);
+        float zRotation= UnityEngine.Random.Range(1, 3);
+        rb.AddTorque(new Vector3(xRotation, yRotation, zRotation) * torqueForce);
+        rb.AddForce(transform.forward * downwardForce);
+    }
 }

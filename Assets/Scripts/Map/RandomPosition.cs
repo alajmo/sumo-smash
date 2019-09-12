@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomPosition : MonoBehaviour {
     public Vector3 GetRandomPosition(
         float minX, float maxX,
-        float minY, float maxY, 
+        float minY, float maxY,
         float minZ, float maxZ
         ) {
         return new Vector3(
