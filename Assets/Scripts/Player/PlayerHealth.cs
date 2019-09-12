@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,21 +10,17 @@ public class PlayerHealth : MonoBehaviour
     AudioSource playerAudio;
     PlayerController playerController;
     bool isDead;
-    void Awake ()
-    {
 
+    void Awake () {
         playerAudio = GetComponent <AudioSource> ();
         playerController = GetComponent <PlayerController> ();
         currentHealth = startingHealth;
         healthSlider = (Slider) FindObjectOfType(typeof (Slider));
     }
 
-
-    void Update ()
-    {
+    void Update () {
 
     }
-
 
     public void TakeDamage (int amount)
     {
@@ -34,21 +29,18 @@ public class PlayerHealth : MonoBehaviour
 
         playerAudio.Play ();
 
-        if(currentHealth <= 0 && !isDead)
-        {
+        if(currentHealth <= 0 && !isDead) {
             Death ();
         }
     }
 
-      public void gainHealth (int amount)
-    {
+    public void gainHealth (int amount) {
         currentHealth += amount;
         // healthSlider.value = currentHealth;
         // playerAudio.Play ();
     }
 
-    void Death ()
-    {
+    void Death () {
         isDead = true;
 
         playerAudio.clip = deathClip;

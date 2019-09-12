@@ -8,6 +8,7 @@ public class RandomPosition : MonoBehaviour {
         float minY, float maxY,
         float minZ, float maxZ
         ) {
+
         return new Vector3(
             Random.Range(minX, maxX),
             Random.Range(minY, maxY),
