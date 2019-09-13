@@ -2309,31 +2309,7 @@ MonoBehaviour:
   tileBreakEnabled: 1
   torqueForce: 10
   downwardForce: 2
-  tiles:
-  - {fileID: 228379039}
-  - {fileID: 437632775}
-  - {fileID: 838552654}
-  - {fileID: 687422685}
-  - {fileID: 927297284}
-  - {fileID: 1400308872}
-  - {fileID: 1496457227}
-  - {fileID: 1733225697}
-  - {fileID: 779113165}
-  - {fileID: 1533946369}
-  - {fileID: 795158659}
-  - {fileID: 689421082}
-  - {fileID: 2029454893}
-  - {fileID: 895223723}
-  - {fileID: 985283487}
-  - {fileID: 592331236}
-  - {fileID: 3331043}
-  - {fileID: 982179674}
-  - {fileID: 392976528}
-  - {fileID: 636371176}
-  - {fileID: 1302521987}
-  - {fileID: 77892284}
-  - {fileID: 1142959987}
-  - {fileID: 1216286879}
+  tiles: []
 --- !u!4 &1565611695
 Transform:
   m_ObjectHideFlags: 0

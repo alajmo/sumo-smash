@@ -51,7 +51,8 @@ public class TileBreak : MonoBehaviour
     }
 
     void EnableParticle(GameObject tile) {
-        tile.GetComponent<ParticleSystem>().Play();
+        TileParticle ps = tile.GetComponent<TileParticle>();
+        ps.Play();
     }
 
     void LoosenTile(GameObject tile) {
