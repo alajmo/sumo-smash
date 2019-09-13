@@ -11,7 +11,7 @@ A push/shoot based multiplayer game.
 
 - We use separate scenes for debugging features. For instance, debugging the food spawn can be done in the [food scene](Assets/Scenes/DebugScenes/FoodScene.unity).
 - To work on a feature or scene, you need to lock that scene so other people don't modify it since there are issues with people working on the same scene, for now just tell the other group members.
-- The [DemoScene](Assets/Scenes/DemoScene.unity) is special. It's our first level and should always work (so no experimentation on this scene please!). If needed to combine features, copy this scene and work on the modifications on the duplicate.
+- The [DemoScene](Assets/Scenes/DemoScene.unity) is special. It's our first level and should always work (so no experimentation on this scene please!). If there is a need to combine features, copy and modify the duplicate scene.
 - Check the [DemoScene](Assets/Scenes/DemoScene.unity) to see how we structure the game objects in the hierarchy view.
 
 ## Task Workflow
