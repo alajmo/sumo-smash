@@ -1,6 +1,6 @@
 # Sumo Smash
 
-A party game for everyone.
+A push/shoot based multiplayer game.
 
 ## Get Started
 
@@ -9,20 +9,29 @@ A party game for everyone.
 
 ## Unity Workflow
 
-- We use separate scenes for debugging different features. For instance, debugging the food spawn can be done in the [food scene](Assets/Scenes/DebugScenes/FoodScene.unity).
-- To work on a feature or scene, you need to lock that scene so other people don't modify it since there are issues with people working on the same scene.
-- The [DemoScene](Assets/Scenes/DemoScene.unity) is special. It's our first level and should always work (so no experimentation on this scene please!).
-- Check the DemoScene to see how we structure the game objects in the hierarchy view.
+- We use separate scenes for debugging features. For instance, debugging the food spawn can be done in the [food scene](Assets/Scenes/DebugScenes/FoodScene.unity).
+- To work on a feature or scene, you need to lock that scene so other people don't modify it since there are issues with people working on the same scene, for now just tell the other group members.
+- The [DemoScene](Assets/Scenes/DemoScene.unity) is special. It's our first level and should always work (so no experimentation on this scene please!). If needed to combine features, copy this scene and work on the modifications on the duplicate.
+- Check the [DemoScene](Assets/Scenes/DemoScene.unity) to see how we structure the game objects in the hierarchy view.
 
-## Kanban Workflow
+## Task Workflow
 
-We use 5 columns (Backlog, Iteration, Doing, Blocked and Done).
+We use a task system with 5 columns to manage work:
 
-- Backlog: Put all possible ideas here.
-- Iteration: The current iteration.
-- Doing: What we're currently doing, ideally keep 1 thing per person in this column
-- Blocked: Cards which are blocked for some reason
-- Done: Cards that are finished (or if we decide to not implement card content, they are moved here as well)
+- **Backlog**: Put all ideas here.
+- **Iteration**: The current iteration.
+- **Doing**: What each member is doing, ideally keep 1 thing per person in this column.
+- **Blocked**: Cards which are blocked for some reason.
+- **Done**: Cards that are finished (or if we decide to not implement card content, they are moved here as well).
+
+Each card can be labelled (multiple labels allowed):
+
+- **Feature**: Some programmable feature, for instance adding shooting, a new event, etc.
+- **Fix**: Fixing a bug
+- **Design**: Anything related to visual design
+- **Task**: Arbitrary task, can be used for upgrading Unity, update some build script, etc.
+- **Discussion**: Something that needs to be decided
+- **Documentation**: Used whenever we're documentation something
 
 ## IDE
 
