@@ -59,6 +59,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -70,6 +71,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -94,7 +96,7 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 1
-  m_CookingOptions: 14
+  m_CookingOptions: -1
   m_Mesh: {fileID: 5062246478642505140, guid: f498ca5df2917024685af034ecae44cf, type: 3}
 --- !u!54 &-199201811004550368
 Rigidbody:
@@ -214,11 +216,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7941815044866725888}
     m_Modifications:
-    - target: {fileID: 105031367039743539, guid: 39e8af0ab67c7f840a4d3b2a464bac24,
-        type: 3}
-      propertyPath: m_Name
-      value: AirParticles
-      objectReference: {fileID: 0}
     - target: {fileID: 7513421589277799852, guid: 39e8af0ab67c7f840a4d3b2a464bac24,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -273,6 +270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 105031367039743539, guid: 39e8af0ab67c7f840a4d3b2a464bac24,
+        type: 3}
+      propertyPath: m_Name
+      value: AirParticles
       objectReference: {fileID: 0}
     - target: {fileID: 347300148628175330, guid: 39e8af0ab67c7f840a4d3b2a464bac24,
         type: 3}
