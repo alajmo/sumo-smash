@@ -199,9 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &3331045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -282,9 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &77892286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -366,9 +362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!1001 &309281059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -531,7 +525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376475098}
   m_LocalRotation: {x: 0.3893048, y: -0.008289487, z: 0.0035033976, w: 0.9210651}
-  m_LocalPosition: {x: 0.7, y: 13.6, z: -7.2000003}
+  m_LocalPosition: {x: 0.56, y: 5.33, z: 0.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -610,10 +604,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeEnabled: 0
-  speed: 0.5
-  delta: 0.5
-  length: 0.5
-  step: 0.009
+  speed: 5
+  length: 0.05
 --- !u!4 &392976530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -640,9 +632,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!1 &487520656
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,9 +761,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &592331238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -787,11 +775,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3731054472916678840, guid: 9558b9d39105bc9488d7558082ae6664,
-        type: 3}
-      propertyPath: m_Name
-      value: Rewired Input Manager
-      objectReference: {fileID: 0}
     - target: {fileID: 3731054472916678822, guid: 9558b9d39105bc9488d7558082ae6664,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -846,6 +829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731054472916678840, guid: 9558b9d39105bc9488d7558082ae6664,
+        type: 3}
+      propertyPath: m_Name
+      value: Rewired Input Manager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9558b9d39105bc9488d7558082ae6664, type: 3}
@@ -927,10 +915,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeEnabled: 0
-  speed: 0.5
-  delta: 0.5
-  length: 0.5
-  step: 0.009
+  speed: 5
+  length: 0.05
 --- !u!4 &636371178 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -963,9 +949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!1001 &689421081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1065,9 +1049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &689421084 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -1173,9 +1155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &779113167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -1261,9 +1241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &795158661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -1296,9 +1274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!1001 &868641867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1437,9 +1413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &895223725 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -1472,9 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!1001 &982179673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1574,9 +1546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &982179676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -1682,9 +1652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &985283489 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -1770,9 +1738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &1142959989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -1968,10 +1934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeEnabled: 0
-  speed: 0.5
-  delta: 0.5
-  length: 0.5
-  step: 0.009
+  speed: 5
+  length: 0.05
 --- !u!4 &1216286887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -2077,9 +2041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &1302521989 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -2112,9 +2074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!1001 &1496457226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2183,10 +2143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeEnabled: 0
-  speed: 0.5
-  delta: 0.5
-  length: 0.5
-  step: 0.009
+  speed: 5
+  length: 0.05
 --- !u!4 &1496457229 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -2267,9 +2225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &1533946371 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -2309,7 +2265,12 @@ MonoBehaviour:
   tileBreakEnabled: 1
   torqueForce: 10
   downwardForce: 2
-  tiles: []
+  tiles:
+  - {fileID: 392976528}
+  - {fileID: 636371176}
+  - {fileID: 1216286879}
+  - {fileID: 1496457227}
+  - {fileID: 2029454893}
 --- !u!4 &1565611695
 Transform:
   m_ObjectHideFlags: 0
@@ -2635,9 +2596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shakeEnabled: 0
   speed: 0.5
-  delta: 0.5
   length: 0.5
-  step: 0.009
 --- !u!4 &1733225699 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
@@ -2771,10 +2730,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeEnabled: 0
-  speed: 0.5
-  delta: 0.5
-  length: 0.5
-  step: 0.009
+  speed: 5
+  length: 0.05
 --- !u!4 &2029454895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941815044866725888, guid: d827417f5e13a3248ad61d1475c535d9,
