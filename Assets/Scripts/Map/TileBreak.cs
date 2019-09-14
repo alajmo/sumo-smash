@@ -7,6 +7,8 @@ public class TileBreak : MonoBehaviour
 {
     public static event Action<TileBreak> OnBreak = delegate {};
 
+    public GameObject dirtParticlePrefab;
+
     [Header("Timer")]
     public float removeInSeconds = 2f;
     public bool tileBreakEnabled = true;
@@ -37,11 +39,9 @@ public class TileBreak : MonoBehaviour
 
     IEnumerator RemoveTile(GameObject tile)
     {
-        shakeTile(tile);
-        yield return new WaitForSeconds(3);
-
         EnableParticle(tile);
-        yield return new WaitForSeconds(3);
+        shakeTile(tile);
+        yield return new WaitForSeconds(6);
 
         LoosenTile(tile);
         yield return new WaitForSeconds(10);
@@ -54,8 +54,10 @@ public class TileBreak : MonoBehaviour
     }
 
     void EnableParticle(GameObject tile) {
-        TileParticle ps = tile.GetComponent<TileParticle>();
-        ps.PlayDirt();
+        GameObject particles = Instantiate(dirtParticlePrefab, Vector3.zero, Quaternion.identity);
+        particles.transform.parent = tile.transform;
+        particles.transform.localPosition = new Vector3(0f, 0.5f, 0f);
+        particles.GetComponent<ParticleSystem>().Play();
     }
 
     void LoosenTile(GameObject tile) {

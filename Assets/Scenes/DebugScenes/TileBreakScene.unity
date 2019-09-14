@@ -94,8 +94,9 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -1770,8 +1771,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1178672057}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -2261,10 +2263,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f46e095ea1f69e84788bcd5652aaa12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirtParticlePrefab: {fileID: 105031367039743539, guid: 575e8564079702e4494701a36dbad6c4,
+    type: 3}
   removeInSeconds: 2
   tileBreakEnabled: 1
-  torqueForce: 10
-  downwardForce: 2
+  torqueForceMin: 0.5
+  torqueForceMax: 1
+  downwardForceMin: 1
+  downwardForceMax: 3
   tiles:
   - {fileID: 392976528}
   - {fileID: 636371176}
