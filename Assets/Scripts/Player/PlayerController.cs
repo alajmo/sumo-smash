@@ -155,7 +155,6 @@ public class PlayerController : MonoBehaviour
 
         if (jumpEnabled && jump && isGrounded())
         {
-        Debug.Log(11111);
             playerJump();
         }
 

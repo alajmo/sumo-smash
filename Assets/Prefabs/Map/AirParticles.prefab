@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 347300148628175330}
   - component: {fileID: 7286886211895765883}
   m_Layer: 0
-  m_Name: DirtParticles
+  m_Name: AirParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

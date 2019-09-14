@@ -20,7 +20,6 @@ public class SpawnHurricane : MonoBehaviour
     {
         mapPositionScript = gameObject.GetComponent<MapPosition>();
         randomPositionScript = gameObject.GetComponent<RandomPosition>();
-
         mapArea = mapPositionScript.GetMapPosition();
 
         StartCoroutine(startHurricane());
@@ -48,6 +47,7 @@ public class SpawnHurricane : MonoBehaviour
 
     private GameObject InstantiateHurricane(Vector3 position)
     {
+        Debug.Log(position);
         GameObject hurricanes = GameObject.FindWithTag("Hurricane");
         GameObject hurricane = Instantiate(hurricanePrefab, position, Quaternion.identity) as GameObject;
         hurricane.transform.parent = hurricanes.transform;

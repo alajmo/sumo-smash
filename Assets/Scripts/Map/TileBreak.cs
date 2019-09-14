@@ -10,8 +10,11 @@ public class TileBreak : MonoBehaviour
     [Header("Timer")]
     public float removeInSeconds = 2f;
     public bool tileBreakEnabled = true;
-    public float torqueForce = 1f;
-    public float downwardForce = 2f;
+
+    public float torqueForceMin = 0.5f;
+    public float torqueForceMax = 1f;
+    public float downwardForceMin = 1f;
+    public float downwardForceMax = 3f;
 
     private float speed = 1f;
     private float delta = 3f;  //delta is the difference between min y to max y.
@@ -52,7 +55,7 @@ public class TileBreak : MonoBehaviour
 
     void EnableParticle(GameObject tile) {
         TileParticle ps = tile.GetComponent<TileParticle>();
-        ps.Play();
+        ps.PlayDirt();
     }
 
     void LoosenTile(GameObject tile) {
@@ -63,10 +66,14 @@ public class TileBreak : MonoBehaviour
         rb.isKinematic = false;
         rb.useGravity = true;
 
+        AddTileForce(rb);
+    }
+
+    void AddTileForce(Rigidbody rb) {
         float xRotation= UnityEngine.Random.Range(1, 3);
         float yRotation= UnityEngine.Random.Range(1, 3);
         float zRotation= UnityEngine.Random.Range(1, 3);
-        rb.AddTorque(new Vector3(xRotation, yRotation, zRotation) * torqueForce);
-        rb.AddForce(transform.forward * downwardForce);
+        rb.AddTorque(new Vector3(xRotation, yRotation, zRotation) * UnityEngine.Random.Range(torqueForceMin, torqueForceMin));
+        rb.AddForce(transform.forward * UnityEngine.Random.Range(downwardForceMin, downwardForceMax));
     }
 }
