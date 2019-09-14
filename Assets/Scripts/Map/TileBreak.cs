@@ -7,6 +7,8 @@ public class TileBreak : MonoBehaviour
 {
     public static event Action<TileBreak> OnBreak = delegate {};
 
+    public GameObject dirtParticlePrefab;
+
     [Header("Timer")]
     public float removeInSeconds = 2f;
     public bool tileBreakEnabled = true;
@@ -37,32 +39,28 @@ public class TileBreak : MonoBehaviour
 
     IEnumerator RemoveTile(GameObject tile)
     {
-        shakeTile(tile);
-        yield return new WaitForSeconds(3);
+        StartDirtParticles(tile);
+        tile.AddComponent<Shake>();
+        yield return new WaitForSeconds(6);
 
-        EnableParticle(tile);
-        yield return new WaitForSeconds(3);
-
+        Destroy(tile.GetComponent<Shake>());
         LoosenTile(tile);
         yield return new WaitForSeconds(10);
 
         Destroy(tile);
     }
 
-    void shakeTile(GameObject tile) {
-        tile.GetComponent<Shake>().enabledShake();
-    }
-
-    void EnableParticle(GameObject tile) {
-        TileParticle ps = tile.GetComponent<TileParticle>();
-        ps.PlayDirt();
+    void StartDirtParticles(GameObject tile) {
+        GameObject particles = Instantiate(dirtParticlePrefab, Vector3.zero, Quaternion.identity);
+        particles.transform.parent = tile.transform;
+        particles.transform.localPosition = new Vector3(0f, 0.5f, 0f);
+        particles.GetComponent<ParticleSystem>().Play();
     }
 
     void LoosenTile(GameObject tile) {
         // Make tile slightly smaller so it can fall easier
         tile.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
 
-        tile.GetComponent<Shake>().disableShake();
         MeshCollider mc = tile.GetComponent<MeshCollider>();
         Rigidbody rb = tile.GetComponent<Rigidbody>();
         mc.convex = true;

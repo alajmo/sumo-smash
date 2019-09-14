@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Shake : MonoBehaviour
 {
-    public bool shakeEnabled = false;
     public float speed = 5f;
     public float length = 0.05f;
 
@@ -13,23 +12,14 @@ public class Shake : MonoBehaviour
 
     void Update()
     {
-        if (shakeEnabled)
-        {
-            Vector3 target = transform.position;
-            target.y = startingPosition.y + length * Mathf.Sin(Time.time * speed + this.offset);
-            transform.position = target;
-        }
+        Vector3 target = transform.localPosition;
+        target.y = startingPosition.y + length * Mathf.Sin(Time.time * speed + this.offset);
+        transform.localPosition = target;
     }
 
-    public void enabledShake()
+    public void Start()
     {
-        shakeEnabled = true;
         this.offset = Random.Range(0, 3.141f);
-        this.startingPosition = transform.position;
-    }
-
-    public void disableShake()
-    {
-        shakeEnabled = false;
+        this.startingPosition = transform.localPosition;
     }
 }
