@@ -37,7 +37,7 @@ public class TileBreak : MonoBehaviour
         OnBreak(this);
     }
 
-    IEnumerator RemoveTile(GameObject tile)
+    public IEnumerator RemoveTile(GameObject tile)
     {
         StartDirtParticles(tile);
         tile.AddComponent<Shake>();
