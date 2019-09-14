@@ -5,27 +5,27 @@ using UnityEngine;
 public class Shake : MonoBehaviour
 {
     public bool shakeEnabled = false;
-    public float speed = 0.5f;
-    public float delta = 0.1f;
-    public float length = 0.5f;
-    public float step = 0.008f;
+    public float speed = 5f;
+    public float length = 0.05f;
+
+    private Vector3 startingPosition;
+    private float offset;
 
     void Update()
     {
         if (shakeEnabled)
         {
-            float y = Random.Range(-length, length);
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                new Vector3(transform.position.x, y, transform.position.z),
-                step
-            );
+            Vector3 target = transform.position;
+            target.y = startingPosition.y + length * Mathf.Sin(Time.time * speed + this.offset);
+            transform.position = target;
         }
     }
 
     public void enabledShake()
     {
         shakeEnabled = true;
+        this.offset = Random.Range(0, 3.141f);
+        this.startingPosition = transform.position;
     }
 
     public void disableShake()

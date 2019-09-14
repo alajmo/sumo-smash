@@ -35,13 +35,13 @@ public class TileBreak : MonoBehaviour
     IEnumerator RemoveTile(GameObject tile)
     {
         shakeTile(tile);
-        yield return new WaitForSeconds(UnityEngine.Random.Range(1, 3));
+        yield return new WaitForSeconds(3);
 
         EnableParticle(tile);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3);
 
         LoosenTile(tile);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
 
         Destroy(tile);
     }
@@ -56,6 +56,9 @@ public class TileBreak : MonoBehaviour
     }
 
     void LoosenTile(GameObject tile) {
+        // Make tile slightly smaller so it can fall easier
+        tile.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
+
         tile.GetComponent<Shake>().disableShake();
         MeshCollider mc = tile.GetComponent<MeshCollider>();
         Rigidbody rb = tile.GetComponent<Rigidbody>();
