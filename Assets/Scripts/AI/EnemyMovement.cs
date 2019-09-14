@@ -49,8 +49,7 @@ public class EnemyMovement : MonoBehaviour
     void MoveEnemeyTowardsPlayer(GameObject player) {
         // 3. Move towards that player
         if (player != null) {
-            navMeshAgent.SetDestination (player.GetComponent<Transform>().position);
-            Debug.Log("Enemy chases " + player.GetComponent<Transform>().position);
+            navMeshAgent.SetDestination (player.transform.position);
         } else {
             navMeshAgent.enabled = false;
         }
