@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnPlayers : MonoBehaviour
 {
@@ -12,13 +13,14 @@ public class SpawnPlayers : MonoBehaviour
     private MapPosition mapPositionScript;
 
     public float[,] spawnPositions;
+    public Slider[] healthSliders;
 
     void Awake() {
         randomPositionScript = gameObject.GetComponent<RandomPosition>();
         mapPositionScript = gameObject.GetComponent<MapPosition>();
 
         float[,] mapArea = mapPositionScript.GetMapPosition();
-
+        healthSliders = (Slider[]) FindObjectsOfType(typeof (Slider));
         CreatePlayers(mapArea);
     }
 
@@ -43,6 +45,7 @@ public class SpawnPlayers : MonoBehaviour
             PlayerController playerController = player.GetComponent<PlayerController>();
             playerController.InitPlayerController(i);
             StaticValues.players[i] = player;
+            player.GetComponent<PlayerHealth>().setHealthbar(healthSliders[i]);
             i++;
         }
     }
