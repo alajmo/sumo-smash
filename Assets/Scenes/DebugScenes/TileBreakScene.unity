@@ -378,6 +378,11 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3094293946884796811, guid: d827417f5e13a3248ad61d1475c535d9,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d827417f5e13a3248ad61d1475c535d9, type: 3}
 --- !u!4 &334105248 stripped
@@ -1839,6 +1844,8 @@ MonoBehaviour:
   - {fileID: 1216286879}
   - {fileID: 1496457227}
   - {fileID: 2029454893}
+  normalTileColor: {r: 0.7254902, g: 0.7254902, b: 0.7254902, a: 1}
+  darkerTileColor: {r: 0.33935562, g: 0.5849056, b: 0.42388925, a: 1}
 --- !u!4 &1565611695
 Transform:
   m_ObjectHideFlags: 0

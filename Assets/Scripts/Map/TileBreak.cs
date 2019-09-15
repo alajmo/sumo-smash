@@ -23,8 +23,23 @@ public class TileBreak : MonoBehaviour
 
     public GameObject[] tiles;
 
+    Renderer rend;
+    Color tileBreakColor;
+    public Color normalTileColor = new Color32(185, 185, 185, 255);
+    public Color darkerTileColor = new Color32(87, 150, 109, 255);
+    List<Renderer> renderers = new List<Renderer>();
+
+
     void Start() {
         StartCoroutine(RemoveTiles());
+    }
+
+    void Update() {
+        foreach(Renderer rends in renderers) {
+            // make the breaking tiles darker in color, -2 in offset because it already starts too dark, 0.3f is for making it slower in transiton
+            tileBreakColor = Color.Lerp(normalTileColor, darkerTileColor, Mathf.Min((Time.time - 2f) * 0.3f, 1));
+            rends.material.SetColor("_Color", tileBreakColor);   
+        }
     }
 
     IEnumerator RemoveTiles()
@@ -32,8 +47,9 @@ public class TileBreak : MonoBehaviour
         yield return new WaitForSeconds(removeInSeconds);
         foreach (GameObject tile in tiles) {
             StartCoroutine(RemoveTile(tile));
+            rend = tile.GetComponent<Renderer>(); 
+            renderers.Add(rend);
         }
-
         OnBreak(this);
     }
 
@@ -52,6 +68,7 @@ public class TileBreak : MonoBehaviour
 
     void StartDirtParticles(GameObject tile) {
         GameObject particles = Instantiate(dirtParticlePrefab, Vector3.zero, Quaternion.identity);
+        
         particles.transform.parent = tile.transform;
         particles.transform.localPosition = new Vector3(0f, 0.5f, 0f);
         particles.GetComponent<ParticleSystem>().Play();
@@ -60,7 +77,6 @@ public class TileBreak : MonoBehaviour
     void LoosenTile(GameObject tile) {
         // Make tile slightly smaller so it can fall easier
         tile.transform.localScale = new Vector3(0.9f, 0.9f, 0.9f);
-
         MeshCollider mc = tile.GetComponent<MeshCollider>();
         Rigidbody rb = tile.GetComponent<Rigidbody>();
         mc.convex = true;
