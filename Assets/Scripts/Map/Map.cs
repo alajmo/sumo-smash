@@ -12,9 +12,8 @@ public enum MapType
 
 public class Map : MonoBehaviour
 {
-    public int width = 20;
-    public int height = 20;
-
+    public int size = 20;
+    
     public MapType type;
 
     public NamedPrefab[] tilePrefabs;
@@ -66,9 +65,9 @@ public struct SquareMap
 
     public void Generate()
     {
-        for (int x = 0; x < map.width; x++)
+        for (int x = 0; x < map.size; x++)
         {
-            for (int y = 0; y < map.height; y++)
+            for (int y = 0; y < map.size; y++)
             {
                 map.StartCoroutine(AddGrass(x, y));
             }
@@ -78,7 +77,7 @@ public struct SquareMap
         float angleDelta = 2f * 3.1415f / (float)playerCount;
         for (int i = 0; i < playerCount; i++)
         {
-            var position = new Vector3(map.width * 0.3f * Mathf.Cos(angleDelta * i), 1, map.height * 0.3f * Mathf.Sin(angleDelta * i));
+            var position = new Vector3(map.size * 0.3f * Mathf.Cos(angleDelta * i), 1, map.size * 0.3f * Mathf.Sin(angleDelta * i));
             AddPlayer(i, position);
         }
     }
@@ -94,7 +93,7 @@ public struct SquareMap
 
     public IEnumerator AddGrass(int x, int y)
     {
-        var position = new Vector3(x - map.width / 2f, 0, y - map.height / 2f);
+        var position = new Vector3(x - map.size / 2f, 0, y - map.size / 2f);
         var distanceToCenter = Vector3.Distance(position, Vector3.zero);
         var grass = map.prefabs["grass"];
 
@@ -102,7 +101,35 @@ public struct SquareMap
         tile.transform.parent = map.transform;
         tile.transform.localPosition = position;
 
-        yield return new WaitForSeconds(15 - distanceToCenter);
-        yield return map.gameObject.GetComponent<TileBreak>().RemoveTile(tile);
+        var delay = TileBreakDelay(position);
+        if (delay > 0) {
+            yield return new WaitForSeconds(delay);
+            yield return map.gameObject.GetComponent<TileBreak>().RemoveTile(tile);
+        }
+    }
+
+    public float TileBreakDelay(Vector3 position) {
+        var distanceToCenter = Vector3.Distance(position, Vector3.zero);
+        
+        var px = Mathf.Abs(position.x);
+        var py = Mathf.Abs(position.z);
+
+        // Final shape
+        if (distanceToCenter < map.size * 0.15f) {
+            return 0;
+        }
+
+        // Part 3
+        if (px < map.size * 0.4f && py < map.size * 0.4f && (px < 2f || py < 2f)) {
+            return 50;
+        }
+
+        // Part 2
+        if (px < 3f || py < 3f) {
+            return 30;
+        }
+
+        // Part 1
+        return 20 - distanceToCenter;
     }
 }
