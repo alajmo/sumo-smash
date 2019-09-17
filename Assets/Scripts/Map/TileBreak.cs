@@ -38,7 +38,7 @@ public class TileBreak : MonoBehaviour
         foreach(Renderer rends in renderers) {
             // make the breaking tiles darker in color, -2 in offset because it already starts too dark, 0.3f is for making it slower in transiton
             tileBreakColor = Color.Lerp(normalTileColor, darkerTileColor, Mathf.Min((Time.time - 2f) * 0.3f, 1));
-            rends.material.SetColor("_Color", tileBreakColor);   
+            rends.material.SetColor("_Color", tileBreakColor);
         }
     }
 
@@ -47,7 +47,7 @@ public class TileBreak : MonoBehaviour
         yield return new WaitForSeconds(removeInSeconds);
         foreach (GameObject tile in tiles) {
             StartCoroutine(RemoveTile(tile));
-            rend = tile.GetComponent<Renderer>(); 
+            rend = tile.GetComponent<Renderer>();
             renderers.Add(rend);
         }
         OnBreak(this);
@@ -68,7 +68,7 @@ public class TileBreak : MonoBehaviour
 
     void StartDirtParticles(GameObject tile) {
         GameObject particles = Instantiate(dirtParticlePrefab, Vector3.zero, Quaternion.identity);
-        
+
         particles.transform.parent = tile.transform;
         particles.transform.localPosition = new Vector3(0f, 0.5f, 0f);
         particles.GetComponent<ParticleSystem>().Play();
