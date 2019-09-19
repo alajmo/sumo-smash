@@ -13,7 +13,6 @@ public class PlayerHealth : MonoBehaviour
     Animator animator;
     PlayerController playerController;
     bool isDead;
-
     void Awake () {
         animator = GetComponent<Animator>();
         playerAudio = GetComponent <AudioSource> ();
@@ -31,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= amount;
             healthSlider.value = currentHealth;
             playerAudio.Play ();
-            
+
             if(currentHealth <= 0 && !isDead) {
                 Death ();
             }
@@ -40,13 +39,13 @@ public class PlayerHealth : MonoBehaviour
     public void gainHealth (int amount) {
 
             currentHealth += amount;
-            //healthSliders.value = currentHealth;
+            healthSlider.value = currentHealth;
 
             if(currentHealth <= 0 && !isDead) {
                 Death ();
             }
-        
-     // playerAudio.Play ();
+
+            //playerAudio.Play ();
     }
 
     void Death () {

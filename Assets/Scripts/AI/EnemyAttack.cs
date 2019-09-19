@@ -6,19 +6,19 @@ using System.Collections.Generic;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float timeBetweenAttacks = 0.5f;     
-    public int attackDamage = 20;              
-    Animator anim;                             
-    GameObject player;                         
-    PlayerHealth playerHealth;           
-    EnemyHealth enemyHealth;                  
-    bool playerInRange;                      
-    float timer;            
+    public float timeBetweenAttacks = 0.5f;
+    public int attackDamage = 20;
+    Animator anim;
+    GameObject player;
+    PlayerHealth playerHealth;
+    EnemyHealth enemyHealth;
+    bool playerInRange;
+    float timer;
 
      List<GameObject> players;
 
      List <GameObject> ps;
-     
+
 
     void Awake ()
     {
@@ -28,11 +28,11 @@ public class EnemyAttack : MonoBehaviour
         playerHealth = player.GetComponent <PlayerHealth> ();
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent <Animator> ();
-        
+
     }
 
     void OnTriggerEnter (Collider other)
-    {   
+    {
         player = GetClosestPlayer(ps);
         if(other.gameObject == player)
         {
@@ -60,15 +60,13 @@ public class EnemyAttack : MonoBehaviour
         }
 
         if(playerHealth.currentHealth <= 0)
-        {   
+        {
             anim.SetTrigger ("PlayerDead");
             ps = GetAlivePlayers();
             playerInRange = false;
-            if (ps.Count > 0) {
-            player = GetClosestPlayer(ps);
-            playerHealth = player.GetComponent <PlayerHealth> ();
-            }
         }
+         player = GetClosestPlayer(ps);
+         playerHealth = player.GetComponent <PlayerHealth> ();
     }
 
      List <GameObject> GetAlivePlayers() {
@@ -98,7 +96,7 @@ public class EnemyAttack : MonoBehaviour
         timer = 0f;
         Debug.Log(player + " attacked" + playerHealth.currentHealth);
         if(playerHealth.currentHealth > 0)
-        {   
+        {
             playerHealth.TakeDamage (attackDamage);
         }
     }
