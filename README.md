@@ -5,7 +5,7 @@ A push/shoot based multiplayer game.
 ## Get Started
 
 1. Clone this repo.
-2. Download Unity version 2019.1.12f1 (we attempt to always stay up to date with the latest stable version).
+2. Download Unity version 2019.3 (we attempt to always stay up to date with the latest stable version).
 
 ## Unity Workflow
 
