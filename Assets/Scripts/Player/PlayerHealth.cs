@@ -12,48 +12,64 @@ public class PlayerHealth : MonoBehaviour
     AudioSource playerAudio;
     Animator animator;
     PlayerController playerController;
-    bool isDead;
-    void Awake () {
+
+    void Awake()
+    {
         animator = GetComponent<Animator>();
-        playerAudio = GetComponent <AudioSource> ();
-        playerController = GetComponent <PlayerController> ();
-        healthSlider = (Slider) FindObjectOfType(typeof (Slider));
+        playerAudio = GetComponent<AudioSource>();
+        playerController = GetComponent<PlayerController>();
+        healthSlider = (Slider)FindObjectOfType(typeof(Slider));
         currentHealth = startingHealth;
     }
 
-    void Update () {}
+    void Update() { }
 
-    public void setHealthbar(Slider slider) {
+    public void setHealthbar(Slider slider)
+    {
         healthSlider = slider;
     }
-    public void TakeDamage (int amount){
-            currentHealth -= amount;
-            healthSlider.value = currentHealth;
-            playerAudio.Play ();
 
-            if(currentHealth <= 0 && !isDead) {
-                Death ();
-            }
+    public void TakeDamage(int amount)
+    {
+        var wasAlive = isAlive;
+
+        currentHealth -= amount;
+        healthSlider.value = currentHealth;
+        playerAudio.Play();
+
+        if (isDead && wasAlive)
+        {
+            Death();
+        }
     }
 
-    public void gainHealth (int amount) {
-
-            currentHealth += amount;
-            healthSlider.value = currentHealth;
-
-            if(currentHealth <= 0 && !isDead) {
-                Death ();
-            }
-
-            //playerAudio.Play ();
+    public void gainHealth(int amount)
+    {
+        currentHealth += amount;
+        healthSlider.value = currentHealth;
     }
 
-    void Death () {
-        isDead = true;
-
+    void Death()
+    {
         animator.SetTrigger("Die");
         playerAudio.clip = deathClip;
-        playerAudio.Play ();
+        playerAudio.Play();
         playerController.enabled = false;
+    }
+
+    public bool isAlive
+    {
+        get
+        {
+            return this.currentHealth > 0;
+        }
+    }
+
+    public bool isDead
+    {
+        get
+        {
+            return this.currentHealth <= 0;
+        }
     }
 }
