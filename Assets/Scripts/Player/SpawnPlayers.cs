@@ -15,19 +15,22 @@ public class SpawnPlayers : MonoBehaviour
     public float[,] spawnPositions;
     public Slider[] healthSliders;
 
-    void Awake() {
+    void Awake()
+    {
         randomPositionScript = gameObject.GetComponent<RandomPosition>();
         mapPositionScript = gameObject.GetComponent<MapPosition>();
 
         float[,] mapArea = mapPositionScript.GetMapPosition();
-        healthSliders = (Slider[]) FindObjectsOfType(typeof (Slider));
+        healthSliders = (Slider[])FindObjectsOfType(typeof(Slider));
         CreatePlayers(mapArea);
     }
 
-    void CreatePlayers(float[,] mapArea) {
+    void CreatePlayers(float[,] mapArea)
+    {
         int i = 0;
         StaticValues.players = new GameObject[StaticValues.numPlayers];
-        while (i < StaticValues.numPlayers) {
+        while (i < StaticValues.numPlayers)
+        {
             Debug.Log("Spawn player " + i);
             Vector3 spawnPositions = randomPositionScript.GetRandomPosition(
                 mapArea[0, 0],
@@ -44,7 +47,7 @@ public class SpawnPlayers : MonoBehaviour
             PlayerController playerController = player.GetComponent<PlayerController>();
             playerController.InitPlayerController(i);
             StaticValues.players[i] = player;
-            player.GetComponent<PlayerHealth>().setHealthbar(healthSliders[i]);
+            player.GetComponent<PlayerHealth>()?.setHealthbar(healthSliders[i]);
             i++;
         }
     }
