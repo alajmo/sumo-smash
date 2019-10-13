@@ -26,7 +26,6 @@ public class SpawnPlayers : MonoBehaviour
 
     void CreatePlayers(float[,] mapArea) {
         int i = 0;
-
         StaticValues.players = new GameObject[StaticValues.numPlayers];
         while (i < StaticValues.numPlayers) {
             Debug.Log("Spawn player " + i);

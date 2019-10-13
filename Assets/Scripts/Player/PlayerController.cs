@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
-        InitPlayerController(0);
+        InitPlayerController(playerId);
 
         playerRigidBody = GetComponent<Rigidbody>();
         playerCollider = GetComponent<CapsuleCollider>();
