@@ -277,6 +277,7 @@ public class PlayerController : MonoBehaviour
             Debug.DrawRay(pos, forward, Color.green, 10);
         }
 
+        playerRigidBody.AddForce(-forward * pushMultiplier / 2);
         StartCoroutine(EnablePush());
     }
 
