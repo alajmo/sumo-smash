@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomPosition : MonoBehaviour {
+public class RandomPosition : MonoBehaviour
+{
     public Vector3 GetRandomPosition(
         float minX, float maxX,
         float minY, float maxY,
         float minZ, float maxZ
-        ) {
+        )
+    {
 
         return new Vector3(
             Random.Range(minX, maxX),

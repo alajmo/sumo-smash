@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7271227532536619862}
   - component: {fileID: 7271227532536619863}
   - component: {fileID: 6041376376047579889}
-  - component: {fileID: -7084550488387650031}
+  - component: {fileID: 1261684745035441735}
   m_Layer: 0
-  m_Name: Grenade
+  m_Name: Meteor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -68,6 +69,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -109,7 +111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-7084550488387650031
+--- !u!114 &1261684745035441735
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,13 +120,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7271227532536619856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f91482d8ba4a20e46a7b57aaadd58b0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 44fc3e51cb201e64fbc18b9e8aedf14c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeOnImpact: 0
-  grenadeRadius: 2
-  timeToExplode: 2
-  explodeForce: 30
+  meteorExplodeRadius: 2
+  explodeForce: 20
   playerLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 1536
