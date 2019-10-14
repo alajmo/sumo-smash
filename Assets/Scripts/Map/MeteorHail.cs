@@ -20,7 +20,8 @@ public class MeteorHail : MonoBehaviour
     private MapPosition mapPositionScript;
     private RandomPosition randomPositionScript;
 
-    void Start() {
+    void Start()
+    {
         mapPositionScript = gameObject.GetComponent<MapPosition>();
         randomPositionScript = gameObject.GetComponent<RandomPosition>();
 
@@ -31,13 +32,16 @@ public class MeteorHail : MonoBehaviour
         StartCoroutine(StartHail());
     }
 
-    private IEnumerator StartHail() {
+    private IEnumerator StartHail()
+    {
         yield return new WaitForSeconds(initialWait);
 
-        while(true) {
+        while (true)
+        {
             hailCoroutine = SpawnMeteorInsideRectangle();
 
-            if (hail) {
+            if (hail)
+            {
                 StartCoroutine(hailCoroutine);
                 yield return new WaitForSeconds(hailDuration);
                 StopCoroutine(hailCoroutine);
@@ -46,11 +50,14 @@ public class MeteorHail : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnMeteorInsideRectangle() {
+    private IEnumerator SpawnMeteorInsideRectangle()
+    {
         GameObject meteors = GameObject.FindWithTag("MeteorHail");
-        while(hail) {
+        while (hail)
+        {
             yield return new WaitForSeconds(intervalBetweenMeteors);
-            for (int j = 0; j < numMeteorsPerHail; j++) {
+            for (int j = 0; j < numMeteorsPerHail; j++)
+            {
                 Vector3 position = randomPositionScript.GetRandomPosition(
                     mapArea[0, 0],
                     mapArea[0, 1],
@@ -64,12 +71,14 @@ public class MeteorHail : MonoBehaviour
         }
     }
 
-    private void CreateHail(GameObject meteors, Vector3 position) {
+    private void CreateHail(GameObject meteors, Vector3 position)
+    {
         GameObject meteor = Instantiate(meteorPrefab, position, Quaternion.identity) as GameObject;
         meteor.transform.parent = meteors.transform;
     }
 
-    void listenOnTileBreak(TileBreak tileBreak) {
+    void listenOnTileBreak(TileBreak tileBreak)
+    {
         mapArea = mapPositionScript.GetMapPosition();
     }
 }

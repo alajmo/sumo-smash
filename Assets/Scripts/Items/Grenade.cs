@@ -13,18 +13,22 @@ public class Grenade : MonoBehaviour
     [Header("Layers")]
     public LayerMask playerLayer;
 
-    void Awake() {
+    void Awake()
+    {
         explodeCoroutine = TimedExplode();
         StartCoroutine(explodeCoroutine);
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && explodeOnImpact) {
+        if (collision.gameObject.CompareTag("Player") && explodeOnImpact)
+        {
             StopCoroutine(explodeCoroutine);
             PushObject(collision.collider);
             Destroy(this.gameObject);
-        } else if (explodeOnImpact) {
+        }
+        else if (explodeOnImpact)
+        {
             StopCoroutine(explodeCoroutine);
             Explode();
             Destroy(this.gameObject);
@@ -35,7 +39,8 @@ public class Grenade : MonoBehaviour
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, grenadeRadius, playerLayer);
         int i = 0;
-        while (i < hitColliders.Length) {
+        while (i < hitColliders.Length)
+        {
             Debug.Log(hitColliders[i].gameObject);
             PushObject(hitColliders[i]);
             i++;
@@ -49,18 +54,21 @@ public class Grenade : MonoBehaviour
         yield return new WaitForSeconds(timeToExplode);
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, grenadeRadius, playerLayer);
         int i = 0;
-        while (i < hitColliders.Length) {
+        while (i < hitColliders.Length)
+        {
             Debug.Log(hitColliders[i].gameObject);
             PushObject(hitColliders[i]);
             i++;
         }
 
-        if (true) {
+        if (true)
+        {
             Destroy(this.gameObject);
         }
     }
 
-    void PushObject(Collider collider) {
+    void PushObject(Collider collider)
+    {
         Rigidbody rb = collider.gameObject.GetComponent<Rigidbody>();
         Vector3 contactDirection = (collider.gameObject.transform.position - transform.position).normalized;
         rb.AddForce(contactDirection * explodeForce, ForceMode.Impulse);
