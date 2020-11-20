@@ -48,7 +48,7 @@ We use [Blender](https://www.blender.org) to design 3D assets.
 
 ## Resources
 
-- [Git Repository](https://github.com/samiralajmovic/sumo-smash)
+- [Git Repository](https://github.com/alajmo/sumo-smash)
 - [Kanban Board](https://trello.com/b/rnP3Svl5/sumo-smash)
 - [Game Document](https://docs.google.com/document/d/1gLZYPnvzvLzPf7-3hBPBq20SQTVK89vb4v9NcLhahVw/edit#heading=h.bgn957jq1e3p)
 - [Telegram chat](https://web.telegram.org/#/im?p=g364557207)
